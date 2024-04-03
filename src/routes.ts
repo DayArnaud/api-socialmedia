@@ -8,6 +8,7 @@ import { CreatePost } from "./controllers/CreatePost";
 import { PostsFeed } from "./controllers/PostsFeed";
 import { ViewOnePost } from "./controllers/ViewOnePost";
 import { UpdatePost } from "./controllers/UpdatePost";
+import { DeletePost } from "./controllers/DeletePost";
 
 const routes = Router();
 
@@ -21,5 +22,6 @@ routes.post("/post", new CreatePost().create);
 routes.get("/posts", new PostsFeed().get);
 routes.get("/post/:id", new ViewOnePost().show);
 routes.patch("/post/:id", new UpdatePost().update);
+routes.delete("/post/:id", new DeletePost().delete);
 
 export default routes;
