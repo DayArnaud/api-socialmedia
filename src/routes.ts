@@ -10,6 +10,7 @@ import { ViewOnePost } from "./controllers/ViewOnePost";
 import { UpdatePost } from "./controllers/UpdatePost";
 import { DeletePost } from "./controllers/DeletePost";
 import { LikePost } from "./controllers/LikePost";
+import { AddComment } from "./controllers/AddComment";
 
 const routes = Router();
 
@@ -25,5 +26,6 @@ routes.get("/post/:id", new ViewOnePost().show);
 routes.patch("/post/:id", new UpdatePost().update);
 routes.delete("/post/:id", new DeletePost().delete);
 routes.patch("/post/:id/likes", new LikePost().likePost);
+routes.patch("/post/:id/comments", new AddComment().addComment);
 
 export default routes;
