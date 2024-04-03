@@ -7,6 +7,7 @@ import { DisableUser } from "./controllers/DisableUser";
 import { CreatePost } from "./controllers/CreatePost";
 import { PostsFeed } from "./controllers/PostsFeed";
 import { ViewOnePost } from "./controllers/ViewOnePost";
+import { UpdatePost } from "./controllers/UpdatePost";
 
 const routes = Router();
 
@@ -19,5 +20,6 @@ routes.patch("/user/:id/inactive", new DisableUser().inactive);
 routes.post("/post", new CreatePost().create);
 routes.get("/posts", new PostsFeed().get);
 routes.get("/post/:id", new ViewOnePost().show);
+routes.patch("/post/:id", new UpdatePost().update);
 
 export default routes;
