@@ -8,6 +8,7 @@ const Post = new Schema({
   comments: [
     {
       _id: Types.ObjectId,
+      user_id: Types.ObjectId,
       description: String,
     },
   ],
