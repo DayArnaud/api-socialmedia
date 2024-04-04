@@ -15,7 +15,7 @@ export class CreatePost {
         user_id: user._id,
         description,
         images,
-        likes: 0,
+        likes: [],
         comments: [],
       });
 
