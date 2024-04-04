@@ -20,6 +20,17 @@ export class PostsFeed {
             },
           },
         },
+        {
+          $addFields: {
+            likes: {
+              $cond: {
+                if: { $isArray: "$likes" },
+                then: { $size: "$likes" },
+                else: 0,
+              },
+            },
+          },
+        },
       ]);
       return res.json(posts);
     } catch (error) {
