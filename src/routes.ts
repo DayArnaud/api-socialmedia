@@ -11,6 +11,7 @@ import { UpdatePost } from "./controllers/UpdatePost";
 import { DeletePost } from "./controllers/DeletePost";
 import { LikePost } from "./controllers/LikePost";
 import { AddComment } from "./controllers/AddComment";
+import multer from "./middlewares/multer";
 
 const routes = Router();
 
@@ -20,7 +21,7 @@ routes.get("/user/:id", new ViewOneUser().show);
 routes.put("/user/:id", new UpdateUser().update);
 routes.patch("/user/:id/inactive", new DisableUser().inactive);
 
-routes.post("/post", new CreatePost().create);
+routes.post("/post", multer.array("images"), new CreatePost().create);
 routes.get("/posts", new PostsFeed().get);
 routes.get("/post/:id", new ViewOnePost().show);
 routes.patch("/post/:id", new UpdatePost().update);
